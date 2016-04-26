@@ -12,10 +12,30 @@
     </div>
 </div>
 <%= form_for(@message) do |f| %>
-    名前:
-    <%= f.text_field :name %>
-    
-    内容:
-    <%= f.text_field :body %>
-    <%= f.submit class: "btn btn-sm btn-primary" %>
+    <div class="form-group">
+        <label for="name_content" class="col-sm-1 control-label">名前:</label>
+        <div class="col-sm-5">
+            <%= f.text_field :name, :class =>"form-control" %>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="form-group">
+        <div id="body_content">
+            <label for="body_label" class="col-sm-1 control-label">内容:</label>
+            <div class="col-sm-5">
+                <div id="body_textarea">
+                    <%= f.text_area :body, :class =>"form-control", :rows =>"3" %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset2 col-sm-10">
+            <div id="submit">
+                <input name="commit" class="btn btn-sm btn-primary" type="submit" value="Create Message"/>
+            </div>
+        </div>
+    </div>
+<!--    <%= f.submit class: "btn btn-sm btn-primary" %>-->
 <% end %>
